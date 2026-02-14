@@ -3,33 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teacher Appreciation</title>
+    <title>Animated Version</title>
     <style>
-        body { font-family: Arial, sans-serif; }
-        .container { text-align: center; margin-top: 50px; }
-        h1 { color: #4CAF50; }
-        .gift-box, .flowers, .teddy-bear { margin: 20px; display: inline-block; }
+        body {
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+        .flower {
+            position: absolute;
+            animation: float 4s ease-in-out infinite;
+        }
+        @keyframes float {
+            from { transform: translateY(0); }
+            to { transform: translateY(-10px); }
+        }
+        .bear {
+            width: 100px;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .gift-box {
+            width: 100px;
+            position: absolute;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            cursor: pointer;
+        }
+        .gift-box:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Thank You, Teachers!</h1>
-        <div class="gift-box">
-            <h2>🎁 Gift Box</h2>
-            <p>Showing appreciation through thoughtful gifts.</p>
-        </div>
-        <div class="flowers">
-            <h2>🌸 Flowers</h2>
-            <p>A bouquet of fresh flowers to brighten your day!</p>
-        </div>
-        <div class="teddy-bear">
-            <h2>🐻 Teddy Bear</h2>
-            <p>Snuggly and cute, just like our favorite teachers!</p>
-        </div>
-        <div class="love-messages">
-            <h2>❤️ Love Messages</h2>
-            <p>Dear Teachers, thank you for your endless guidance and support!</p>
-        </div>
-    </div>
+    <div class="flower" style="top: 20px; left: 10%;"><img src="flower.png" alt="Flower"/></div>
+    <div class="flower" style="top: 120px; left: 80%;"><img src="flower.png" alt="Flower"/></div>
+    <div class="bear"><img src="teddy_bear.png" alt="Teddy Bear"/></div>
+    <div class="gift-box"><img src="gift_box.png" alt="Gift Box"/></div>
+    <script>
+        const giftBox = document.querySelector('.gift-box');
+        giftBox.addEventListener('click', function() {
+            alert('You found a gift!');
+        });
+    </script>
 </body>
 </html>
