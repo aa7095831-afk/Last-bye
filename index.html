@@ -3,58 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animated Version</title>
+    <title>Emoji Animation</title>
     <style>
         body {
-            background-color: #f9f9f9;
-            font-family: Arial, sans-serif;
-            position: relative;
-            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-size: 50px;
         }
-        .flower {
-            position: absolute;
-            animation: float 4s ease-in-out infinite;
-        }
-        @keyframes float {
-            from { transform: translateY(0); }
-            to { transform: translateY(-10px); }
-        }
-        .bear {
-            width: 100px;
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: bounce 2s infinite;
+        .emoji {
+            animation: bounce 1s infinite;
         }
         @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        .gift-box {
-            width: 100px;
-            position: absolute;
-            bottom: 100px;
-            left: 50%;
-            transform: translateX(-50%);
-            cursor: pointer;
-        }
-        .gift-box:hover {
-            transform: scale(1.1);
-            transition: transform 0.3s;
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
         }
     </style>
 </head>
 <body>
-    <div class="flower" style="top: 20px; left: 10%;"><img src="flower.png" alt="Flower"/></div>
-    <div class="flower" style="top: 120px; left: 80%;"><img src="flower.png" alt="Flower"/></div>
-    <div class="bear"><img src="teddy_bear.png" alt="Teddy Bear"/></div>
-    <div class="gift-box"><img src="gift_box.png" alt="Gift Box"/></div>
-    <script>
-        const giftBox = document.querySelector('.gift-box');
-        giftBox.addEventListener('click', function() {
-            alert('You found a gift!');
-        });
-    </script>
+    <div class="emoji">😀🎉✨💖🌈</div>
 </body>
-</html>
+</html>  
